@@ -1,0 +1,15 @@
+{
+  "short_name": "Laba Media",
+  "name": "Laba Media & Communications",
+  "lang": "eng",
+  "display": "standalone",
+  "theme_color": "#49a6e9",
+  "background_color": "#49a6e9",
+  "icon": [
+    {
+      "src": "app-icon.jpeg",
+      "sizes": "720x892",
+      "type": ""
+    }
+  ]
+}
