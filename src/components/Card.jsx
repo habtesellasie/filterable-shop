@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion';
 import { BsFillBagHeartFill } from 'react-icons/bs';
 
 const Card = ({ img, title, star, reviews, newPrice, prevPrice }) => {
   return (
-    <div>
-      <section className='card'>
+    <>
+      <motion.section
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+        layout
+        className='card'
+      >
         <img src={img} alt={title} className='card-img' />
         <div className='card-details'>
           <h3 className='card-title'>{title}</h3>
@@ -21,8 +28,8 @@ const Card = ({ img, title, star, reviews, newPrice, prevPrice }) => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </>
   );
 };
 

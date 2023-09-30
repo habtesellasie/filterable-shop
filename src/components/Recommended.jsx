@@ -2,7 +2,7 @@ import Button from './Button';
 
 const Recommended = ({ handleClick }) => {
   return (
-    <div>
+    <div className='recommended-container'>
       <h2 className='recommended-title'>Recommended</h2>
       <div className='recommended-flex'>
         <Button onClickHandler={handleClick} value='' title='All Products' />

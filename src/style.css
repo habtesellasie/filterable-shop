@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: #000418;
+  overflow-x: hidden;
   color: white;
   font-family: 'Karla', sans-serif;
 }
@@ -31,14 +36,68 @@ li {
 }
 
 .sidebar {
-  width: 15%;
+  width: 250px;
   position: fixed;
+  /* top: 5rem; */
+  padding-top: 5rem;
   height: 100%;
-  border-right: 2px solid #e5e5e5;
+  border-right: 2px solid gray;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 830px) {
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: unset;
+    border: none;
+    height: unset;
+    padding: unset;
+    margin: unset;
+  }
+
+  nav {
+    padding-top: unset !important;
+    justify-content: center;
+    border: none !important;
+  }
+
+  .card {
+    width: 100% !important;
+  }
+
+  .recommended-flex,
+  .recommended-title {
+    margin: unset !important;
+    justify-content: center;
+    text-align: center;
+  }
+  .recommended-title {
+    padding: 1rem 0;
+  }
+
+  .card-container {
+    margin: 0 auto !important;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .sidebar > div {
+    width: fit-content;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  * {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 }
 
 .logo-container {
@@ -158,17 +217,29 @@ li {
 .card {
   margin: 20px;
   border: 2px solid #ededed;
-  padding: 20px;
+  /* padding: 20px; */
   cursor: pointer;
+  max-width: 250px;
+  border-radius: 15px;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  scale: 1.05;
 }
 
 .card-img {
-  width: 13rem;
-  margin-bottom: 1rem;
+  height: 200px;
+  object-fit: contain;
+  width: 100%;
 }
 
 .card-title {
   margin-bottom: 1rem;
+}
+
+.card-details {
+  padding: 20px;
 }
 
 .card-reviews {
@@ -197,12 +268,16 @@ li {
 
 nav {
   display: flex;
+  /* position: fixed; */
+  width: 100%;
+  background-color: black;
   border-bottom: 2px solid #f3f3f3;
-  justify-content: space-around;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   padding: 20px;
+  top: 0;
   z-index: 999;
-  margin-left: 2rem;
+  position: relative;
 }
 
 input {
